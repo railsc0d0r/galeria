@@ -49,3 +49,19 @@ group :development, :test do
   gem 'spring'
 end
 
+# Cucumber for BDD
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner', '<= 1.0.1'
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'headless'
+  gem 'email_spec'
+  gem 'capybara-screenshot'
+end
+
+# For running tests parallel
+gem "parallel_tests", :group => :development
+
