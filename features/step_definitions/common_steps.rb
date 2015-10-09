@@ -160,7 +160,7 @@ end
 
 Dann(/^debug(?:ger|)$/) do
   ## Use `page' method to inspect the current state.
-  binding.pry
+  byebug
 end
 
 Dann(/^screenshot$/) do
@@ -185,4 +185,10 @@ Wenn(/^ich das "([^"]+)" abschicke$/) do |form_selector_name|
   form = page.find(selector_for(form_selector_name))
   submit_button = form.find('input[type=submit]')
   submit_button.click
+end
+
+Dann(/^sollte die App im Browser geladen werden\.$/) do
+  response_code = page.status_code
+
+  raise "Page not loaded"  unless (Array(200..207) + Array(301..308)).include? response_code
 end
