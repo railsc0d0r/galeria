@@ -38,6 +38,9 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'rvm1-capistrano3', require: false
 
+# we use ember-cli for our frontend-app
+gem "ember-cli-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -64,4 +67,3 @@ end
 
 # For running tests parallel
 gem "parallel_tests", :group => :development
-
