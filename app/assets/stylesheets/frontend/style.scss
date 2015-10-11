@@ -1,0 +1,54 @@
+/* ============================================================
+  STANDARD ELEMENTS
+============================================================ */
+h1, h2, h3 {
+}
+h1 {
+  font-size: 4.5vw;
+}
+h2 {
+  font-size: 3.5vw;
+}
+h3 {
+  font-size: 3vw;
+}
+ul, ol {
+}
+/* ============================================================
+  CUSTOM ELEMENTS
+============================================================ */
+.galleria{
+  width: 62vw;
+  height: 100vh;
+  background: #eee;
+  float: right;
+  margin: 0;
+  padding: 0;
+  clear: right;
+}
+
+#sidebar {
+  position: relative;
+  padding-left: 0;
+  float:left;
+  width: 35vw;
+}
+#menu {
+  float: right;
+  font-size: 5vh;
+  margin-top: 42vh;
+}
+#logo {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 100vh;
+  vertical-align: middle;
+}
+#logo svg {
+  display: inline-block;
+  position: absolute;
+  top: 0vh;
+  left: 0;
+  width: auto;
+  height: 100vh;
+}
