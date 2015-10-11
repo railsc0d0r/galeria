@@ -1,0 +1,4 @@
+#sidebar
+  = partial "logo"
+  = partial "menu"
+  #main = outlet

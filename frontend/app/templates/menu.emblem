@@ -1,0 +1,6 @@
+#menu
+  ul#menu_expanded style="display: none;"
+    li ABOUT
+    li CONTACT
+    li IMPRESSUM
+    li LOGIN
