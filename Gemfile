@@ -65,3 +65,6 @@ end
 
 # For running tests parallel
 gem "parallel_tests", :group => :development
+
+# We use devise () for authentication and authorization
+gem 'devise'
