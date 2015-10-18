@@ -15,7 +15,8 @@ Angenommen(/^die App ist im Browser geladen\.$/) do
 end
 
 Wenn(/^ich das Hauptmenü öffne\.$/) do
-  steps %{ Wenn ich den ""-Link klicke. }
+  locator = '#toggle_main_menu'
+  find(locator).trigger('click')
 end
 
 Wenn(/^ich klicke "(.*?)"\.$/) do |option|
@@ -120,6 +121,7 @@ end
 
 Wenn(/^ich den "(.*?)"\-Link klicke$/) do |link_name|
   page.has_css?(link_name, visible: true)
+  puts "Link #{link_name} is visible"
   click_link(link_name)
 end
 
@@ -174,7 +176,7 @@ Dann(/^debug(?:ger|)$/) do
   byebug
 end
 
-Dann(/^screenshot$/) do
+Dann(/^screenshot\.$/) do
   sleep 3
   screenshot_and_open_image
 end
