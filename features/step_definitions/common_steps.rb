@@ -7,6 +7,17 @@ Angenommen /^ich klicke "([^"]*)"$/ do |option|
   }")
 end
 
+Angenommen(/^die App ist im Browser geladen\.$/) do
+  steps %{
+    Wenn ich die Startseite aufrufe.
+    Dann sollte die App im Browser geladen werden.
+  }
+end
+
+Wenn(/^ich das Hauptmenü öffne\.$/) do
+  steps %{ Wenn ich den ""-Link klicke. }
+end
+
 Wenn(/^ich klicke "(.*?)"\.$/) do |option|
   steps %{ Angenommen ich klicke "#{option}" }
 end
