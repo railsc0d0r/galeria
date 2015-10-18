@@ -5,12 +5,17 @@ Funktionalität: Benutzer anmelden
   mich an der Applikation mit email oder Benutzernamen anmelden können,
   um die Applikation nutzen zu können.
 
+  Grundlage:
+    Angenommen die App ist im Browser geladen.
+
+  @wip
   Szenario: Einen Benutzer mit Benutzernamen anmelden
     Angenommen ein Benutzer mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321".
     Wenn ich das Hauptmenü öffne.
     Und ich mich mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321" anmelde.
     Dann möchte ich "Erfolgreich angemeldet" sehen.
 
+  @wip
   Szenario: Einen Benutzer mit email anmelden
     Angenommen ein Benutzer mit der email "my_user@example.com" und dem Passwort "secret987654321".
     Wenn ich das Hauptmenü öffne.
