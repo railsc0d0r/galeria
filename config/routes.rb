@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # scope the backend to provide deeplinks for ember-app
   scope '/backend' do
-    devise_for :users
+    devise_for :users, controllers: { sessions: 'sessions' }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
