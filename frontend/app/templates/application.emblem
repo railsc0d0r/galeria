@@ -1,5 +1,6 @@
 #sidebar
   = partial "logo"
   = partial "menu"
+
 #main.galleria
   = outlet
