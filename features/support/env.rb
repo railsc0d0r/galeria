@@ -25,7 +25,7 @@ Capybara.register_driver :poltergeist do |app|
       app,
       {
           # debug: true,
-          window_size: [1440,1050],
+          window_size: [1600,768],
           # js_errors: false,
           inspector: true,
           timeout: 120}
