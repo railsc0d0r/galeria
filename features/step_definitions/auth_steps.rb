@@ -10,10 +10,10 @@ Angenommen(/^ein Benutzer mit der email "(.*?)" und dem Passwort "(.*?)"\.$/) do
   @user.save!
 end
 
-Wenn(/^ich mich mit dem Benutzernamen "(.*?)" und dem Passwort "(.*?)" anmelde\.$/) do |arg1, arg2|
+Wenn(/^ich den Benutzernamen "(.*?)" und das Passwort "(.*?)" eingebe\.$/) do |username, password|
   pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich mich mit der email "(.*?)" und dem Passwort "(.*?)" anmelde\.$/) do |arg1, arg2|
+Wenn(/^ich die email "(.*?)" und das Passwort "(.*?)" eingebe\.$/) do |email, password|
   pending # express the regexp above with the code you wish you had
 end
