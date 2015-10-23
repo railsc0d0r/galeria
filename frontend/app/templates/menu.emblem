@@ -3,4 +3,8 @@
     li ABOUT
     li CONTACT
     li IMPRESSUM
-    li LOGIN
+    li
+      if session.isAuthenticated
+        = link-to 'invalidateSession' | LOGOUT
+      else
+        = link-to 'login' | LOGIN
