@@ -1,3 +1,4 @@
+# coding: utf-8
 Angenommen /^ich klicke "([^"]*)"$/ do |option|
   retval = (option == "Ok") ? "true" : "false"
 
@@ -122,7 +123,11 @@ end
 Wenn(/^ich den "(.*?)"\-Link klicke$/) do |link_name|
   page.has_css?(link_name, visible: true)
   puts "Link #{link_name} is visible"
-  click_link(link_name)
+  if Capybara.current_driver == :poltergeist
+    find(:link, link_name).trigger('click')
+  else
+    click_link(link_name)
+  end
 end
 
 Wenn(/^ich den "(.*?)"\-Link klicke\.$/) do |link_name|
