@@ -1,5 +1,5 @@
-#menu
-  ul#menu_expanded style="display: none;"
+#menu class="modal"
+  ul#menu_expanded 
     li ABOUT
     li CONTACT
     li IMPRESSUM

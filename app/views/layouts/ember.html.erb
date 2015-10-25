@@ -6,9 +6,20 @@
     <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <title>Marions Site</title>
     <%= csrf_meta_tags %>
+
+    <!-- Include some styles -->
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Exo:400i,300i|Jura:400,300|Oswald:400,300|Comfortaa:400,300&subset=latin,latin-ext' %>
     <%= stylesheet_link_tag 'frontend' %>
+
+    <!-- Include some javascripts -->
     <%= javascript_include_tag 'modernizr' %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-1.11.3.min.js' %>
+
+    <!-- Include jquery-modal -->
+    <%= javascript_include_tag 'jquery.modal.min.js' %>
+    <%= stylesheet_link_tag 'jquery.modal.css' %>
+
+    <!-- include ember-script-tags -->
     <%= include_ember_script_tags :frontend %>
   </head>
 
