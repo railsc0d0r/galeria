@@ -9,7 +9,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w[ frontend.css modernizr.js ]
+Rails.application.config.assets.precompile += %w[ .gif .png .jpg .svg .json frontend.css modernizr.js jquery.modal.min.js jquery.modal.css ]
 
 Rails.application.config.assets.precompile << Proc.new do |path|
   path =~ /\.(css|js|png|jpg|mp3|ogg|wav|otf|eot|ttf|woff|fnt|svg|appcache|json)\z/ ? true : false
