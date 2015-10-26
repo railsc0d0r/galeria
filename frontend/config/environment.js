@@ -19,6 +19,10 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth-devise'] = {
+      serverTokenEndpoint: '/backend/users/sign_in'
+  };
+
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise'
   };

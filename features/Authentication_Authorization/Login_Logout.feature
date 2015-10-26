@@ -13,6 +13,7 @@ Funktionalität: Benutzer anmelden
     Angenommen ein Benutzer mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321".
     Wenn ich das Hauptmenü öffne.
     Und ich den "LOGIN"-Link klicke.
+    Dann screenshot.
     Und ich den Benutzernamen "MyUser" und das Passwort "secret987654321" eingebe.
     Und ich den "Anmelden"-Button klicke.
     Dann möchte ich "Erfolgreich angemeldet" sehen.
