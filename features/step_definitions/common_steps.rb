@@ -122,7 +122,6 @@ end
 
 Wenn(/^ich den "(.*?)"\-Link klicke$/) do |link_name|
   page.has_css?(link_name, visible: true)
-  puts "Link #{link_name} is visible"
   if Capybara.current_driver == :poltergeist
     find(:link, link_name).trigger('click')
   else
