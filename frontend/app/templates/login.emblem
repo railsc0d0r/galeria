@@ -6,5 +6,7 @@
     label for='password'
       | Password:
     input id='password' placeholder='Enter Password' type='password' value=password
+    label for='submit'
+      |
     button type='submit'
       | Login
