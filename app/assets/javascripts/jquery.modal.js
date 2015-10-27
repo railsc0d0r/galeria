@@ -7,7 +7,6 @@
   var current = null;
 
   $.modal = function(el, options) {
-      console.log("Calling modal")
     $.modal.close(); // Close any open modals.
     var remove, target;
     this.$body = $('body');
