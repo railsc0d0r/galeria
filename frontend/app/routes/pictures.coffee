@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
-`import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin'`
+`import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';`
 
-PicturesRoute = Ember.Route.extend()
+PicturesRoute = Ember.Route.extend(AuthenticatedRouteMixin)
 
 `export default PicturesRoute`

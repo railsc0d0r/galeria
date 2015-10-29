@@ -1,5 +1,7 @@
 # broccoli-coffee
 
+[![Build Status](https://travis-ci.org/joliss/broccoli-coffee.svg?branch=master)](https://travis-ci.org/joliss/broccoli-coffee)
+
 A CoffeeScript filter for Broccoli.
 
 ## Installation
@@ -11,12 +13,12 @@ npm install --save-dev broccoli-coffee
 ## Usage
 
 ```js
-var filterCoffeeScript = require('broccoli-coffee');
-tree = filterCoffeeScript(tree, options);
+var BroccoliCoffee = require('broccoli-coffee');
+var outputNode = new BroccoliCoffee(inputNode, options);
 ```
 
-All `.coffee` files (as well as `.litcoffee` and `.coffee.md`) will be
-replaced with compiled `.js` files.
+All `.coffee` files (as well as `.litcoffee` and `.coffee.md`) in `inputNode`
+will be replaced with compiled `.js` files in `outputNode`.
 
 ### Options
 
@@ -26,7 +28,7 @@ If `bare` is true, the CoffeeScript compiler will not emit a top-level
 function wrapper:
 
 ```js
-filterCoffeeScript(tree, {
+new BroccoliCoffee(node, {
   bare: true
 })
 ```
