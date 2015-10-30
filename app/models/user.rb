@@ -24,13 +24,14 @@ class User < ActiveRecord::Base
   end
 
   # overwrite devise to use email or username as login
-  def self.find_first_by_auth_conditions(warden_conditions)
+  def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       # when allowing distinct User records with, e.g., "username" and "UserName"...
-      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
+      where(conditions.to_hash).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
     else
-      where(conditions).first
+      conditions[:email].downcase! if conditions[:email]
+      where(conditions.to_hash).first
     end
   end
   

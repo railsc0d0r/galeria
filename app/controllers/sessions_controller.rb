@@ -3,6 +3,9 @@
 # We just provide token-based authentication and return JSON
 #
 class SessionsController < Devise::SessionsController
+  prepend_before_filter :require_no_authentication, only: :create 
+  prepend_before_filter :allow_params_authentication!, only: :create
+  
   def create
     respond_to do |format|
       format.html { super }
@@ -18,4 +21,13 @@ class SessionsController < Devise::SessionsController
     end
   end
 
+  protected
+
+  def sign_in_params
+    devise_parameter_sanitizer.sanitize(:sign_in)
+  end
+
+  def auth_options
+    { scope: resource_name, recall: "#{controller_path}#new" }
+  end
 end
