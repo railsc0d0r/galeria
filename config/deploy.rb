@@ -47,6 +47,7 @@ namespace :deploy do
 		on roles(:app), in: :sequence, wait: 5 do
       within release_path do
         with rails_env: fetch(:rails_env) do
+          execute "bash -l -c 'cd #{release_path}; pwd; bundle exec rake db:seed RAILS_ENV=#{fetch(:rails_env)}'"
           execute "bash -l -c 'cd #{release_path}; pwd; bundle exec rake unicorn:restart RAILS_ENV=#{fetch(:rails_env)}'"
         end
       end
