@@ -12,8 +12,8 @@ Angenommen(/^ein Benutzer mit der email "(.*?)" und dem Passwort "(.*?)"\.$/) do
 end
 
 Wenn(/^ich den Benutzernamen "(.*?)" und das Passwort "(.*?)" eingebe\.$/) do |username, password|
-  page.has_css?('input#identification', visible: true)
-  fill_in 'identification', :with => username
+  page.has_css?('input#login', visible: true)
+  fill_in 'login', :with => username
 
   page.has_css?('input#password', visible: true)
   fill_in 'password', :with => password

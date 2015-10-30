@@ -17,7 +17,6 @@ Funktionalität: Benutzer anmelden
     Und ich den "Login"-Button klicke.
     Dann möchte ich "Erfolgreich angemeldet" sehen.
 
-  @wip
   Szenario: Einen Benutzer mit email anmelden
     Angenommen ein Benutzer mit der email "my_user@example.com" und dem Passwort "secret987654321".
     Wenn ich das Hauptmenü öffne.
