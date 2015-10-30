@@ -1,13 +1,15 @@
 #login_form.modal
   if errorMessage
      errorMessage
-  form
+  form submit='authenticate'
     label for='identification'
       | Login:
-    Ember.TextField id='identification' placeholder='Enter Login' valueBinding=identification
+    = input id='login' placeholder='Enter Login' value=login
     label for='password'
       | Password:
-    Ember.TextField id='password' placeholder='Enter Password' type='password' valueBinding=password
+    = input id='password' placeholder='Enter Password' type='password' value=password
     label for='submit'
       |
-    input type='submit' value='Login' click='authenticate'
+    input type='submit' value='Login'
+  a.close_modal href='/'
+    | Back

@@ -2,7 +2,11 @@
 LoginView = Ember.View.extend(
   didInsertElement: () ->
     element = $('#login_form')
-    element.modal()
+    element.modal(
+        escapeClose: false,
+        clickClose: false,
+        showClose: false
+    )
 )
 
 `export default LoginView`

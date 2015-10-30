@@ -5,12 +5,10 @@ export default Ember.Controller.extend({
 
   actions: {
     authenticate() {
-      var identification = this.get('identification');
-      var password = this.get('password');
+      let login = this.get('login');
+      let password = this.get('password');
 
-      console.log("Authenticating user: " + identification + " w/ pw: " + password);
-
-      this.get('session').authenticate('authenticator:devise', identification, password).catch((reason) => {
+      this.get('session').authenticate('authenticator:devise', login, password).catch((reason) => {
         this.set('errorMessage', reason.error);
       });
     }
