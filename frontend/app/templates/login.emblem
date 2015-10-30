@@ -1,6 +1,8 @@
 #login_form.modal
   if errorMessage
-     errorMessage
+     #error_messages
+       ' Login failed:
+       = errorMessage
   form submit='authenticate'
     label for='identification'
       | Login:
@@ -11,5 +13,4 @@
     label for='submit'
       |
     input type='submit' value='Login'
-  a.close_modal href='/'
-    | Back
+  a.close-modal click='close'

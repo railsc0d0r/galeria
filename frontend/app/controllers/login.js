@@ -10,7 +10,13 @@ export default Ember.Controller.extend({
 
       this.get('session').authenticate('authenticator:devise', login, password).catch((reason) => {
         this.set('errorMessage', reason.error);
+        this.set('login', '');
+        this.set('password', '');
       });
+    },
+    close() {
+      $.modal.close();
+      this.transitionToRoute('application');
     }
   }
 });

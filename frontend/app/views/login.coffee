@@ -7,6 +7,11 @@ LoginView = Ember.View.extend(
         clickClose: false,
         showClose: false
     )
+
+    controller = this.get('controller')
+
+    if controller.get('errorMessage')
+        controller.set('errorMessage', null) 
 )
 
 `export default LoginView`
