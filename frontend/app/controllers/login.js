@@ -2,6 +2,7 @@ import Ember from 'ember';
 import SessionService from 'ember-simple-auth/services/session';
 
 export default Ember.Controller.extend({
+  needs: ['application'],
   session: Ember.inject.service('session'),
 
   actions: {
@@ -17,7 +18,8 @@ export default Ember.Controller.extend({
       });
       if (session.isAuthenticated) {
         $.modal.close();
-        this.transitionToRoute('application');        
+        this.transitionToRoute('application');
+        this.get('controllers.application').send('showSuccessfulAuthenticated');
       }
     },
     close() {

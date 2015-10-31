@@ -5,6 +5,6 @@
     li IMPRESSUM
     li
       if session.isAuthenticated
-        a click='invalidateSession' LOGOUT
+        a href="#" click='invalidateSession' LOGOUT
       else
         = link-to 'login' | LOGIN

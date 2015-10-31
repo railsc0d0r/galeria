@@ -118,6 +118,10 @@ Before('@javascript') do |scenario, block|
 
   # Switch to poltergeist explicitly
   Capybara.current_driver = :poltergeist
+
+  # Clear localStorage
+  visit('/')
+  page.evaluate_script('localStorage.clear()')
 end
 
 Before('@selenium') do |scenario, block|

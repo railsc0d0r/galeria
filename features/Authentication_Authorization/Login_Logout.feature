@@ -15,21 +15,23 @@ Funktionalität: Benutzer anmelden
     Und ich den "LOGIN"-Link klicke.
     Und ich den Benutzernamen "MyUser" und das Passwort "secret987654321" eingebe.
     Und ich den "Login"-Button klicke.
-    Dann möchte ich "Erfolgreich angemeldet" sehen.
+    Dann möchte ich "Successfully authenticated." sehen.
 
+  @wip
   Szenario: Einen Benutzer mit email anmelden
     Angenommen ein Benutzer mit der email "my_user@example.com" und dem Passwort "secret987654321".
     Wenn ich das Hauptmenü öffne.
     Und ich den "LOGIN"-Link klicke.
     Und ich die email "my_user@example.com" und das Passwort "secret987654321" eingebe.
     Und ich den "Login"-Button klicke.
-    Dann möchte ich "Erfolgreich angemeldet" sehen.
+    Dann möchte ich "Successfully authenticated." sehen.
 
+  @wip
   Szenario: Einen Benutzer abmelden
     Angenommen eine Anmeldung als Benutzer.
     Wenn ich das Hauptmenü öffne.
-    Und ich den "Logout"-Link klicke.
-    Dann möchte ich "Anmelden" sehen.
+    Und ich den "LOGOUT"-Link klicke.
+    Dann möchte ich "Successfully logged out." sehen.
 
   Szenario: Anmelden mit einem nicht aktivierten Account
     Angenommen ein Benutzer mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321".

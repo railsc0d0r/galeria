@@ -11,6 +11,16 @@ Angenommen(/^ein Benutzer mit der email "(.*?)" und dem Passwort "(.*?)"\.$/) do
   @user.save!
 end
 
+Angenommen(/^eine Anmeldung als Benutzer\.$/) do
+  steps %{
+    Angenommen ein Benutzer mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321".
+    Wenn ich das Hauptmenü öffne.
+    Und ich den "LOGIN"-Link klicke.
+    Und ich den Benutzernamen "MyUser" und das Passwort "secret987654321" eingebe.
+    Und ich den "Login"-Button klicke.
+  }
+end
+
 Wenn(/^ich den Benutzernamen "(.*?)" und das Passwort "(.*?)" eingebe\.$/) do |username, password|
   page.has_css?('input#login', visible: true)
   fill_in 'login', :with => username
