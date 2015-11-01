@@ -3,8 +3,13 @@
     li ABOUT
     li CONTACT
     li IMPRESSUM
-    li
-      if session.isAuthenticated
+    if session.isAuthenticated
+      li
+        = link-to 'pictures' | PICTURES
+      li
+        = link-to 'users' | USERS
+      li
         a href="#" click='invalidateSession' LOGOUT
-      else
+    else
+      li
         = link-to 'login' | LOGIN
