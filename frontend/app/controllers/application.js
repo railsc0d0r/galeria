@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
 
   actions: {
     invalidateSession() {
+      setTimeout(this._showPopUp("Logging out."),6000);
       this.get('session').invalidate();
-      this._showPopUp("Successfully logged out.");
     },
     showSuccessfulAuthenticated() {
       this._showPopUp("Successfully authenticated.");

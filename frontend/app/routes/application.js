@@ -18,7 +18,7 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   _cleanUpAndTransition() {
     $.modal.close();
     this.transitionTo('application');
-    this.get('controllers.application').send('showSuccessfulAuthenticated');
+    this.controllerFor('application').send('showSuccessfulAuthenticated');
   },
 
   _populateCurrentUser() {
