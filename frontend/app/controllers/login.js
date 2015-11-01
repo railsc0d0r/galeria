@@ -17,9 +17,7 @@ export default Ember.Controller.extend({
         this.set('password', '');
       });
       if (session.isAuthenticated) {
-        $.modal.close();
-        this.transitionToRoute('application');
-        this.get('controllers.application').send('showSuccessfulAuthenticated');
+        this.send('sessionAuthenticationSucceeded');
       }
     },
     close() {
