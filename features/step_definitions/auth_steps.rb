@@ -11,12 +11,36 @@ Angenommen(/^ein Benutzer mit der email "(.*?)" und dem Passwort "(.*?)"\.$/) do
   @user.save!
 end
 
+Angenommen(/^ein Administrator mit dem Benutzernamen "(.*?)" und dem Passwort "(.*?)"\.$/) do |email, password|
+  steps %{ Angenommen ein Benutzer mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321". }
+  @user.update_attribute(:is_admin, true)
+end
+
+
 Angenommen(/^eine Anmeldung als Benutzer\.$/) do
+  username = "MyUser"
+  password = "secret987654321"
+  
   steps %{
-    Angenommen ein Benutzer mit dem Benutzernamen "MyUser" und dem Passwort "secret987654321".
-    Wenn ich das Hauptmenü öffne.
-    Und ich den "LOGIN"-Link klicke.
-    Und ich den Benutzernamen "MyUser" und das Passwort "secret987654321" eingebe.
+    Angenommen ein Benutzer mit dem Benutzernamen "#{username}" und dem Passwort "#{password}".
+    Und ich melde mich mit dem Benutzernamen "#{username}" und dem Passwort "#{password}" an.
+  }
+end
+
+Angenommen(/^eine Anmeldung als Administrator\.$/) do
+  username = "MyUser"
+  password = "secret987654321"
+  
+  steps %{
+    Angenommen ein Administrator mit dem Benutzernamen "#{username}" und dem Passwort "#{password}".
+    Und ich melde mich mit dem Benutzernamen "#{username}" und dem Passwort "#{password}" an.
+  }
+end
+
+Angenommen(/^ich melde mich mit dem Benutzernamen "(.*?)" und dem Passwort "(.*?)" an\.$/) do |username, password|
+  steps %{
+    Wenn ich zur Anmeldeseite gehe.
+    Und ich den Benutzernamen "#{username}" und das Passwort "#{password}" eingebe.
     Und ich den "Login"-Button klicke.
   }
 end
