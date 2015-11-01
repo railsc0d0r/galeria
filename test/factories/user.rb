@@ -11,5 +11,6 @@ FactoryGirl.define do
     password "secret123456789"
     password_confirmation "secret123456789"
     activated true
+    is_admin false
   end
 end
