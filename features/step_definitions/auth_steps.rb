@@ -45,6 +45,14 @@ Angenommen(/^ich melde mich mit dem Benutzernamen "(.*?)" und dem Passwort "(.*?
   }
 end
 
+Angenommen(/^dieser Account ist nicht aktiviert\.$/) do
+  @user.update_attribute(:activated, false)
+end
+
+Wenn(/^ich mich mit dem Benutzernamen "(.*?)" und dem Passwort "(.*?)" anmelde\.$/) do |username, password|
+  steps %{ Angenommen ich melde mich mit dem Benutzernamen "#{username}" und dem Passwort "#{password}" an. }
+end
+
 Wenn(/^ich den Benutzernamen "(.*?)" und das Passwort "(.*?)" eingebe\.$/) do |username, password|
   page.has_css?('input#login', visible: true)
   fill_in 'login', :with => username
