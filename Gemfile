@@ -66,5 +66,8 @@ end
 # For running tests parallel
 gem "parallel_tests", :group => :development
 
-# We use devise () for authentication and authorization
+# We use devise (https://github.com/plataformatec/devise) for authentication and authorization
 gem 'devise'
+
+# We use paperclip (https://github.com/thoughtbot/paperclip#installation) to manage attachements to an object
+gem "paperclip", "~> 4.3"
