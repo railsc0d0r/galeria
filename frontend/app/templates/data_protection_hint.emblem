@@ -1,0 +1,5 @@
+#data_protection_hint class="modal modal_content"
+  h4
+    | Datenschutzhinweis:
+  p
+    | Diese Seite verwendet Cookies und Google Analytics, um das Besucherverhalten anonym zu speichern und auszuwerten. Mit dem Besuch dieser Seite stimmen sie der Verwendung dieser Technologien zu.

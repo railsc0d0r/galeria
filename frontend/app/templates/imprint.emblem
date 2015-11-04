@@ -1,0 +1,27 @@
+#imprint class="modal modal_content"
+  h4
+    | Inhaber und Betreiber der Webseite:
+  b
+    | Marion Rommel
+  p
+    | Ricklinger Str.  79
+    br
+    | 30449 Hannover
+  p
+    | Deutschland
+  p
+    | contact@marionrommel.de
+  p
+    | +49-511-47391858
+
+  h4
+    | Hinweis:
+  p
+    ' Diese Website dient ausschließlich persönlichen Zwecken. Bei sämtlichen Photos handelt es sich um Bilder, die ich selbst aufgenommen habe. Urheber sämtlicher Photos:
+    b
+      | Marion Rommel
+    | . Die Verwendung der Bilder ist nur mit schriftlicher Zustimmung gestattet.
+  p
+    a#toggle_imprint href="#data_protection_hint" rel="modal:open"
+      b
+        | Datenschutzhinweis

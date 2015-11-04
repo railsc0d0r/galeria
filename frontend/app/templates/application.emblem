@@ -1,6 +1,7 @@
 #sidebar
   = partial "logo"
   = partial "menu"
-
+  = partial "imprint"
+  = partial "data_protection_hint"
 #main.galleria
   = outlet

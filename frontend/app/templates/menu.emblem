@@ -2,7 +2,9 @@
   ul#menu_expanded 
     li ABOUT
     li CONTACT
-    li IMPRESSUM
+    li
+      a#toggle_imprint href="#imprint" rel="modal:open"
+        | IMPRESSUM
     if session.isAuthenticated
       li
         = link-to 'pictures' | PICTURES

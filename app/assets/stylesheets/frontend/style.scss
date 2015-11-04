@@ -36,6 +36,12 @@
   width: auto;
   height: 100vh;
 }
+.modal_content {
+  font-size: 50%;
+}
+.modal_content p, h4 {
+  padding-bottom: 10px;
+}
 #error_messages{
   margin-bottom: 5px;
   padding: 5px;
