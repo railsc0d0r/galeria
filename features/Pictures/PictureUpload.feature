@@ -8,6 +8,7 @@ Funktionalität: Bilder hochladen und öffentlich stellen
   Grundlage:
     Angenommen die App ist im Browser geladen.
     Und eine Anmeldung als Administrator.
+    Und eine Datei "test.png" im Testfixtures-Verzeichnis.
 
   @wip
   Szenario: Ein Bild hochladen
