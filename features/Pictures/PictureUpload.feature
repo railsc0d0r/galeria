@@ -1,5 +1,5 @@
 # language: de
-@javascript
+@javascript @fs
 Funktionalität: Bilder hochladen und öffentlich stellen
   Als Administrator möchte ich,
   um Inhalte einzufügen,
@@ -28,4 +28,3 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Und ich navigiere zur Bilder-Liste.
     Wenn ich die Checkbox unter dem hochgeladenen Bild aktiviere.
     Dann möchte ich "Picture successfully published" sehen.
- 

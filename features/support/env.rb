@@ -112,6 +112,11 @@ Before('@dont_run') do |scenario, block|
   scenario.skip_invoke!
 end
 
+Before('@fs') do |scenario|
+  RailsUpload.setup
+  RailsUpload.clear
+end
+
 Before('@javascript') do |scenario, block|
   # Set Capybara.server explicitly
   Capybara.server_port = 8888 + ENV['TEST_ENV_NUMBER'].to_i
