@@ -6,6 +6,20 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+module RailsUpload
+  def self.folder
+    return folder_path.to_s
+  end
+
+  def self.folder_path
+    if Rails.env.test?
+      Rails.root.join('tmp', 'upload', ENV['TEST_ENV_NUMBER'] || "0")
+    else
+      Rails.root.join('upload')
+    end
+  end
+end
+
 module Galeria
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
