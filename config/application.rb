@@ -18,6 +18,14 @@ module RailsUpload
       Rails.root.join('upload')
     end
   end
+
+  def self.clear
+    FileUtils.rm_rf Dir.glob self.folder_path.join('*')
+  end
+
+  def self.setup
+    FileUtils.mkdir self.folder_path unless Dir.exists? self.folder_path
+  end
 end
 
 module Galeria
