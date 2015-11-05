@@ -24,7 +24,7 @@ module RailsUpload
   end
 
   def self.setup
-    FileUtils.mkdir self.folder_path unless Dir.exists? self.folder_path
+    FileUtils.mkdir_p self.folder_path unless Dir.exists? self.folder_path
   end
 end
 
