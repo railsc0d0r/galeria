@@ -2,9 +2,12 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
+  init() {
+          $.modal.close();
+  },
   beforeModel() {
     if (this.session.isAuthenticated) {
-      return this._populateCurrentUser();
+      this._populateCurrentUser();
     }
   },
 

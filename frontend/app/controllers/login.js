@@ -20,7 +20,6 @@ export default Ember.Controller.extend({
       }
     },
     close() {
-      $.modal.close();
       this.transitionToRoute('application');
     }
   }
