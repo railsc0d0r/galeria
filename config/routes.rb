@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope '/backend' do
     get :csrf, to: 'csrf#index'
     devise_for :users, controllers: { sessions: 'sessions' }
+    resources :users
     resources :pictures
   end
 
