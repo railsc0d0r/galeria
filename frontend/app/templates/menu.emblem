@@ -6,10 +6,11 @@
       a#toggle_imprint href="#imprint" rel="modal:open"
         | IMPRESSUM
     if session.isAuthenticated
-      li
-        = link-to 'pictures' | PICTURES
-      li
-        = link-to 'users' | USERS
+      if currentUser.is_admin
+        li
+          = link-to 'pictures' | PICTURES
+        li
+          = link-to 'users' | USERS
       li
         a href="#" click='invalidateSession' LOGOUT
     else

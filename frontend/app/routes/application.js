@@ -2,19 +2,22 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
-  init() {
-          $.modal.close();
-  },
-  beforeModel() {
-    if (this.session.isAuthenticated) {
-      this._populateCurrentUser();
-    }
+  init: function() {
+    const _this = this;
+
+    this.get('session').on('authenticationSucceeded', function() {
+      _this._populateCurrentUser();
+      _this._cleanUpAndTransition();
+    });
+
+    this._super.apply(this, arguments);
   },
 
-  actions: {
-    sessionAuthenticationSucceeded() {
-      this._cleanUpAndTransition();
-      // this._populateCurrentUser().then(user => this._cleanUpAndTransition());
+  afterModel() {
+    let session = this.get('session');
+
+    if (session.get('isAuthenticated')) {
+      this._populateCurrentUser();
     }
   },
 
@@ -25,8 +28,13 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   },
 
   _populateCurrentUser() {
-    const { user_id, user_type } = this.get('session.secure');
-    return this.store.find(user_type, user_id).then(user => this.get('currentUser').set('content', user) && user);
+    const user_id = this._getUserIdFromSession();
+    return this.store.find('user', user_id).then(user => this.get('currentUser').set('content', user) && user);
+  },
+
+  _getUserIdFromSession() {
+    const user_id = this.get('session.session.content.authenticated.user_id');
+    return user_id;
   }
 
 });
