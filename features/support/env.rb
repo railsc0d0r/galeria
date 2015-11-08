@@ -24,7 +24,6 @@ phantomjs_local_storage_path = Rails.root.join('tmp', 'phantomjs', ENV['TEST_ENV
 FileUtils.mkdir_p phantomjs_local_storage_path unless Dir.exists? phantomjs_local_storage_path
 
 phantomjs_options = ["--local-storage-path=#{phantomjs_local_storage_path}/"]
-puts "Starting phantomjs w/ options: #{phantomjs_options.awesome_inspect}"
 
 # Extra poltergeist w/o js-error-handling
 Capybara.register_driver :poltergeist do |app|
