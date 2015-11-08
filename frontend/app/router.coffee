@@ -6,6 +6,7 @@ Router = Ember.Router.extend
 
 Router.map ->
   @route 'login'
+  @route 'signup'
   @route 'pictures'
     @route('new')
     return
