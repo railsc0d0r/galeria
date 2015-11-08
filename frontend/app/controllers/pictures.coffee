@@ -1,5 +1,7 @@
 `import Ember from 'ember'`
 
-PicturesController = Ember.Controller.extend()
+PicturesController = Ember.ArrayController.extend(
+  itemController: 'picture'
+)
 
 `export default PicturesController`
