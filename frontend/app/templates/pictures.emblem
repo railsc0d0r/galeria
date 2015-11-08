@@ -1,7 +1,4 @@
-h1
-  | PICTURES
-
-= each item in model
-
+= link-to 'pictures.new' | ADD
+each item in model
 
 = outlet
