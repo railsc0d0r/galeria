@@ -1,5 +1,5 @@
 # language: de
-@javascript
+@javascript 
 Funktionalität: Hauptmenu
   Als Benutzer der Seite möchte ich
   in meinem Kontext ein Hauptmenü angezeigt bekommen,
@@ -15,7 +15,6 @@ Funktionalität: Hauptmenu
     Und möchte ich "IMPRESSUM" sehen.
     Und möchte ich "LOGIN" sehen.
   
-  @wip
   Szenario: Angemeldet als Benutzer
     Angenommen eine Anmeldung als Benutzer.
     Wenn ich das Hauptmenü öffne.

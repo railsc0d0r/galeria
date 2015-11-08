@@ -19,6 +19,13 @@ Capybara.default_selector = :css
 # Use phantomjs for javascript-testing, because it's faster than webkit
 require 'capybara/poltergeist'
 
+# Prepare localStorage for phantomjs
+phantomjs_local_storage_path = Rails.root.join('tmp', 'phantomjs', ENV['TEST_ENV_NUMBER'] || "0")
+FileUtils.mkdir_p phantomjs_local_storage_path unless Dir.exists? phantomjs_local_storage_path
+
+phantomjs_options = ["--local-storage-path=#{phantomjs_local_storage_path}/"]
+puts "Starting phantomjs w/ options: #{phantomjs_options.awesome_inspect}"
+
 # Extra poltergeist w/o js-error-handling
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(
@@ -28,6 +35,7 @@ Capybara.register_driver :poltergeist do |app|
           window_size: [1600,768],
           # js_errors: false,
           inspector: true,
+          phantomjs_options: phantomjs_options,
           timeout: 300
       }
   )
@@ -125,8 +133,7 @@ Before('@javascript') do |scenario, block|
   Capybara.current_driver = :poltergeist
 
   # Clear localStorage
-  visit('/')
-  page.evaluate_script('localStorage.clear()')
+  FileUtils.rm_rf Dir.glob phantomjs_local_storage_path.join('*')
 end
 
 Before('@selenium') do |scenario, block|
@@ -145,6 +152,10 @@ After('@selenium') do |scenario, block|
   end
 
   sleep 2
+end
+
+After('@javascript') do |scenario|
+  page.evaluate_script('localStorage.clear()')
 end
 
 at_exit do
