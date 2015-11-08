@@ -16,6 +16,7 @@ Angenommen(/^die App ist im Browser geladen\.$/) do
 end
 
 Wenn(/^ich das Hauptmenü öffne\.$/) do
+  sleep 1
   locator = '#toggle_main_menu'
   find(locator).trigger('click')
 end
