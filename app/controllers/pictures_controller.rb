@@ -5,11 +5,20 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all
+
+    respond_to do |format|
+      format.html { render html: @pictures }
+      format.json { render json: @pictures }
+    end  
   end
 
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    respond_to do |format|
+      format.html { render html: @picture }
+      format.json { render json: @picture }
+    end  
   end
 
   # GET /pictures/new
@@ -29,7 +38,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.save
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-        format.json { render :show, status: :created, location: @picture }
+        format.json { render json: @picture }
       else
         format.html { render :new }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
@@ -43,7 +52,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.update(picture_params)
         format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
-        format.json { render :show, status: :ok, location: @picture }
+        format.json { render json: @picture }
       else
         format.html { render :edit }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
@@ -69,6 +78,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:name, :public)
+      params.require(:picture).permit(:name, :public, :attachement)
     end
 end
