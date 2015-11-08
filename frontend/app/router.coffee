@@ -7,14 +7,14 @@ Router = Ember.Router.extend
 Router.map ->
   @route 'login'
   @route 'signup'
-  @route 'pictures'
+  @route 'pictures', ->
     @route('new')
     return
   @resource 'picture', path: 'pictures/:picture_id', ->
     @route('edit')
     @route('delete')
     return
-  @route 'users'
+  @route 'users', ->
     @route('new')
     return
   @resource 'user', path: 'users/:user_id', ->
