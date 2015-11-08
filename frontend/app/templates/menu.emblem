@@ -1,5 +1,7 @@
 #menu class="modal"
   ul#menu_expanded 
+    li onclick="$.modal.close();"
+      = link-to 'index' | HOME
     li ABOUT
     li CONTACT
     li
@@ -7,9 +9,9 @@
         | IMPRESSUM
     if session.isAuthenticated
       if currentUser.is_admin
-        li
+        li onclick="$.modal.close();"
           = link-to 'pictures' | PICTURES
-        li
+        li onclick="$.modal.close();"
           = link-to 'users' | USERS
       li
         a href="#" click='invalidateSession' LOGOUT
