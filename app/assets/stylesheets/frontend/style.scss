@@ -1,7 +1,21 @@
 /* ============================================================
+  OVERWRITE ELEMENTS
+============================================================ */
+.upload_modal {
+  min-height: 40vh;
+  text-align: center;
+}
+.file-picker__preview {
+  text-align: center;
+}
+.file-picker__preview__image {
+  width: 50%;
+  height: 50%;
+}
+/* ============================================================
   CUSTOM ELEMENTS
 ============================================================ */
-.galleria{
+.galleria {
   width: 62vw;
   height: 100vh;
   background: #aaa;

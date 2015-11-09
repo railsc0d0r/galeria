@@ -1,1 +1,8 @@
 #new_form.modal
+  form.upload_modal
+    = file-picker fileLoaded="fileLoaded"
+      | Click to upload a file
+    if file_name
+      | #{file_name}, #{file_size}
+  a.close-modal click='close'
+  
