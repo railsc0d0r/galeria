@@ -4,5 +4,7 @@
       | Click to upload a file
     if file_name
       | #{file_name}, #{file_size}
+    = input id='comment' placeholder='Enter a comment' value=comment
+    input type='submit' value='UPLOAD'
   a.close-modal click='close'
   

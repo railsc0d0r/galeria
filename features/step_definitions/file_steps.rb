@@ -1,6 +1,9 @@
 # coding: utf-8
 Angenommen(/^eine Datei "(.*?)" im Testfixtures\-Verzeichnis\.$/) do |filename|
-  path_to_fixtures = Rails.root.join('features','support','test_files')
+  File.file?(TestFiles.folder_path.join(filename))
+end
 
-  File.file?(path_to_fixtures + filename)
+Wenn(/^ich das Bild "(.*?)" zum Upload auswähle\.$/) do |filename|
+  locator = page.first(:css, 'input.file-picker__input.ember-view', :visible => false)[:id]
+  attach_file(locator, TestFiles.folder_path.join(filename), :visible => false)
 end

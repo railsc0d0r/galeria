@@ -17,6 +17,8 @@ PicturesNewView = Ember.View.extend(
       controller.set('file_name', null) 
       controller.set('file_size', null) 
 
+    if controller.get('comment')
+      controller.set('comment', null)
 )
 
 `export default PicturesNewView`
