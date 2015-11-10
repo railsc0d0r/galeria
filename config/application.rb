@@ -28,6 +28,16 @@ module RailsUpload
   end
 end
 
+module TestFiles
+  def self.folder
+    folder_path.to_s
+  end
+  
+  def self.folder_path
+    Rails.root.join('features','support','test_files')
+  end
+end
+
 module Galeria
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
