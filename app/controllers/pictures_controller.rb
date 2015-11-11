@@ -33,7 +33,6 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    logger.info "Params for picture: #{picture_params}"
     @picture = Picture.new(picture_params)
     respond_to do |format|
       if @picture.save
@@ -79,6 +78,37 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:name, :public, :comment, attachement: [:filename, :type, :data ])
+      if params[:picture] && params[:picture][:attachement]
+        attachment_params = params[:picture][:attachement]
+
+        params[:picture][:attachement] = convert_to_file(attachment_params)
+      end
+      params.require(:picture).permit(:name, :public, :comment, :attachement)
+    end
+
+    # Generates file from given attachment-data
+    def convert_to_file(attachment)
+      file_data = split_base64(attachment[:data])
+
+      filename = "/tmp/#{attachment[:filename]}"
+      
+      File.open(filename, "w") do |tempfile|
+        tempfile.binmode
+        tempfile << Base64.decode64(file_data[:data])
+        tempfile.rewind
+      end
+
+      File.open(filename)
+    end
+
+    def split_base64(uri_str)
+      if uri_str.match(%r{^data:(.*?);(.*?),(.*)$})
+        uri = Hash.new
+        uri[:type] = $1 
+        uri[:encoder] = $2 
+        uri[:data] = $3 
+        uri[:extension] = $1.split('/')[1] 
+        return uri
+      end
     end
 end

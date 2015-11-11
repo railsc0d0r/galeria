@@ -1,10 +1,8 @@
 #new_form.modal
   form.upload_modal
-    = file-picker fileLoaded="fileLoaded"
+    = file-picker fileLoaded="fileLoaded" readAs="readAsDataURL"
       | Click to upload a file
     if file_name
       | #{file_name}, #{file_size}
-    = input id='comment' placeholder='Enter a comment' value=comment
-    input type='submit' value='UPLOAD'
   a.close-modal click='close'
   
