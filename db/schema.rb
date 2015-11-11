@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103020500) do
+ActiveRecord::Schema.define(version: 20151110203635) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151103020500) do
     t.string   "attachement_content_type"
     t.integer  "attachement_file_size"
     t.datetime "attachement_updated_at"
+    t.text     "comment"
   end
 
   create_table "users", force: :cascade do |t|
