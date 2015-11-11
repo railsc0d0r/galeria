@@ -67,6 +67,10 @@ Wenn(/^ich "(.*?)" in das "(.*?)"\-Feld eingebe$/) do |value, field_name|
   fill_in(field_name, :with => value)
 end
 
+Wenn(/^ich "(.*?)" als Kommentar eingebe\.$/) do |value|
+  steps %{ Wenn ich "#{value}" in das "comment"-Feld eingebe }
+end
+
 Wenn(/^ich folgendes eingebe:$/) do |table|
   table.raw.each do |(field_name, value)|
     fill_in(field_name, with: value)
