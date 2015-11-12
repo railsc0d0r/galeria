@@ -6,6 +6,9 @@ Rails.application.config.assets.version = '1.0'
 # Creates RailsUpload-folder, if it doesn't exist
 RailsUpload.setup
 
+# Set paperclip to use this folder
+Paperclip::Attachment.default_options[:path] = "#{RailsUpload.folder_path}/:class/:attachment/:id_partition/:style/:filename"
+
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
