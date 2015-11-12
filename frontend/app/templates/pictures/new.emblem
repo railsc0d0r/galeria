@@ -1,8 +1,17 @@
 #new_form.modal
-  form.upload_modal
+  form.upload_modal submit="createPicture"
     = file-picker fileLoaded="fileLoaded" readAs="readAsDataURL"
       | Click to upload a file
     if file_name
       | #{file_name}, #{file_size}
+    label for='name'
+      | Name:
+    = input id='name' placeholder='Enter Name' type='name' value=name
+    label for='comment'
+      | Comment:
+    = input id='comment' placeholder='Enter Comment' type='comment' value=comment
+    label for='submit'
+      |
+    input type='submit' value='UPLOAD'
   a.close-modal click='close'
   
