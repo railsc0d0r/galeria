@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  include DataUrlConcern
+  
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   # GET /pictures
@@ -84,31 +86,5 @@ class PicturesController < ApplicationController
         params[:picture][:attachement] = convert_to_file(attachment_params)
       end
       params.require(:picture).permit(:name, :public, :comment, :attachement)
-    end
-
-    # Generates file from given attachment-data
-    def convert_to_file(attachment)
-      file_data = split_base64(attachment[:data])
-
-      filename = "/tmp/#{attachment[:filename]}"
-      
-      File.open(filename, "w") do |tempfile|
-        tempfile.binmode
-        tempfile << Base64.decode64(file_data[:data])
-        tempfile.rewind
-      end
-
-      File.open(filename)
-    end
-
-    def split_base64(uri_str)
-      if uri_str.match(%r{^data:(.*?);(.*?),(.*)$})
-        uri = Hash.new
-        uri[:type] = $1 
-        uri[:encoder] = $2 
-        uri[:data] = $3 
-        uri[:extension] = $1.split('/')[1] 
-        return uri
-      end
     end
 end
