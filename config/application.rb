@@ -13,12 +13,22 @@ module RailsUpload
 
   def self.folder_path
     if Rails.env.test?
-      Rails.root.join('tmp', 'upload', ENV['TEST_ENV_NUMBER'] || "0")
+      Rails.root.join('public','system', 'test', ENV['TEST_ENV_NUMBER'] || "0")
     else
-      Rails.root.join('upload')
+      Rails.root.join('public','system','upload')
     end
   end
 
+  def self.base_url
+    if Rails.env.test?
+      url = "/system/test/#{ENV['TEST_ENV_NUMBER'] || '0'}"
+    else
+      url = "/system/upload"
+    end
+
+    url
+  end
+  
   def self.clear
     FileUtils.rm_rf Dir.glob self.folder_path.join('*')
   end
