@@ -18,3 +18,7 @@
 
 # Ignore rerun.txt from cukes
 rerun.txt
+
+# Ignore possible upload-folders. They are created and destroyed on the fly, when needed.
+/public/system/upload
+/public/system/test
