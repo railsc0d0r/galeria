@@ -1,7 +1,7 @@
 #new_form.modal
   form.upload_modal submit="createPicture"
     = file-picker fileLoaded="fileLoaded" readAs="readAsDataURL"
-      | Click to upload a file
+      | Click >>here<< to upload a file
     if file_name
       | #{file_name}, #{file_size}
     label for='name'
