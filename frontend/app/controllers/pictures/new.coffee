@@ -6,6 +6,8 @@ PicturesNewController = Ember.Controller.extend(
       this.set('file_name', file.filename)
       this.set('file_size', Math.round(file.size / 1024) + "Kb")
       this.set('attachement', file)
+      $.modal.resize()
+      console.log('modal resized')
 
     createPicture: () ->
       attachement = this.get('attachement')
@@ -18,6 +20,8 @@ PicturesNewController = Ember.Controller.extend(
         console.log('Picture created.')
       	self.transitionToRoute('pictures')
         self.set('file','')
+        self.set('name','')
+        self.set('comment','')
         self._close()
         ,() ->
            console.log('Picture could not be saved.')
@@ -26,7 +30,7 @@ PicturesNewController = Ember.Controller.extend(
     close: () ->
         this._close()
   _close: () ->
-            $.modal.close();
+            $.modal.close()
             this.transitionToRoute('pictures')
 )
 
