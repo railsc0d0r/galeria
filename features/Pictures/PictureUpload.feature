@@ -26,5 +26,6 @@ Funktionalität: Bilder hochladen und öffentlich stellen
   Szenario: Ein Bild öffentlich stellen
     Angenommen ein hochgeladenes Bild.
     Und ich navigiere zur Bilder-Liste.
-    Wenn ich die Checkbox unter dem hochgeladenen Bild aktiviere.
+    Dann screenshot.
+    Wenn ich die Checkbox neben dem hochgeladenen Bild aktiviere.
     Dann möchte ich "Picture successfully published" sehen.
