@@ -10,7 +10,6 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Und eine Anmeldung als Administrator.
     Und eine Datei "test.png" im Testfixtures-Verzeichnis.
 
-  @wip
   Szenario: Ein Bild hochladen
     Wenn ich das Hauptmenü öffne.
     Und ich den "PICTURES"-Link klicke.
@@ -21,8 +20,9 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Und ich den "UPLOAD"-Button klicke.
     Dann möchte ich "Picture successfully uploaded." sehen.
     Und möchte ich die Bilder-Liste sehen.
-    Und möchte ich das hochgeladene Bild als Thumbnail sehen.
+    Und möchte ich das hochgeladene Bild als Eintrag sehen.
 
+  @wip
   Szenario: Ein Bild öffentlich stellen
     Angenommen ein hochgeladenes Bild.
     Und ich navigiere zur Bilder-Liste.
