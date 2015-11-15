@@ -15,9 +15,9 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Wenn ich das Hauptmenü öffne.
     Und ich den "PICTURES"-Link klicke.
     Und ich den "ADD"-Link klicke.
-    Und ich das Bild "test.png" zum Upload auswähle.
-    Dann screenshot.
+    Und ich "Test-Name" als Name eingebe.
     Und ich "Test-Kommentar" als Kommentar eingebe.
+    Und ich das Bild "test.png" zum erstellen auswähle.
     Und ich den "UPLOAD"-Button klicke.
     Dann möchte ich "Picture successfully uploaded." sehen.
     Und möchte ich die Bilder-Liste sehen.
