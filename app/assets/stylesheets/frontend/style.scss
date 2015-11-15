@@ -21,6 +21,7 @@
 .galleria {
   width: 62vw;
   height: 100vh;
+  overflow: auto;
   background: #aaa;
   float: right;
   margin: 0;
@@ -75,4 +76,24 @@
   top: 0;
   width: 100vw;
   z-index: 99;
+}
+.picture-list-item {
+  border: 1px solid #999;
+  padding: 2vh 0 0 1vw;
+}
+.picture-list-item.private {
+  background: #bbb;
+}
+.picture-list-item.public {
+  background: #ddd;
+}
+.picture_thumbnail .picture_content {
+  display: inline-block;
+}
+.picture_thumbnail {
+  float: left;
+}
+.picture_content {
+  padding-left: 120px;
+  heigth: 100%;
 }

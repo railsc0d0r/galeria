@@ -1,0 +1,11 @@
+div class="picture_thumbnail"
+  a href="#picture_large_#{pictureId}" rel="modal:open"
+    img src=thumbnail
+
+div class="picture_content"
+  = yield
+
+div style="clear:both;"
+
+p id="picture_large_#{pictureId}" class="modal modal_content" style="width=60vw;"
+  img src=large width="100%" height="100%"
