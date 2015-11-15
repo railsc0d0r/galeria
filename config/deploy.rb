@@ -43,6 +43,7 @@ namespace :deploy do
 
   before 'deploy', 'rvm1:install:gems'
 
+  desc "Seed db and restart unicorn"
   task :restart do
 		on roles(:app), in: :sequence, wait: 5 do
       within release_path do
@@ -54,6 +55,18 @@ namespace :deploy do
     end
   end
 
+  desc "build missing paperclip styles"
+  task :build_missing_paperclip_styles do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "paperclip:refresh:missing_styles"
+        end
+      end
+    end
+  end
+  
+  after("deploy:compile_assets", "deploy:build_missing_paperclip_styles")
   after 'deploy:finished', 'deploy:restart'
 
   after :restart, :clear_cache do
