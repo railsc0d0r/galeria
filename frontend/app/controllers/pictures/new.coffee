@@ -1,13 +1,14 @@
 `import Ember from 'ember'`
 
 PicturesNewController = Ember.Controller.extend(
+  needs: ['application'],
   actions: 
     fileLoaded: (file) ->
       this.set('file_name', file.filename)
       this.set('file_size', Math.round(file.size / 1024) + "Kb")
       this.set('attachement', file)
       $.modal.resize()
-      console.log('modal resized')
+      console.log('File loaded.')
 
     createPicture: () ->
       attachement = this.get('attachement')
@@ -32,6 +33,7 @@ PicturesNewController = Ember.Controller.extend(
   _close: () ->
             $.modal.close()
             this.transitionToRoute('pictures')
+            this.controllerFor('application').send('showSuccessfulCreatedPicture')
 )
 
 `export default PicturesNewController`

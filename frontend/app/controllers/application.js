@@ -14,6 +14,9 @@ export default Ember.Controller.extend({
     },
     showSuccessfulAuthenticated() {
       this._showPopUp("Successfully authenticated.");
+    },
+    showSuccessfulCreatedPicture() {
+      this._showPopUp("Picture successfully uploaded.");
     }
   },
 
