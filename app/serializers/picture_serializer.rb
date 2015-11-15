@@ -1,5 +1,5 @@
 class PictureSerializer < ActiveModel::Serializer
-  attributes :id, :name, :public, :url_large, :url_thumbnail
+  attributes :id, :name, :comment, :public, :url_large, :url_thumbnail
 
   def url_large
     object.attachement.url(:large)
