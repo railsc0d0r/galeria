@@ -22,3 +22,6 @@ rerun.txt
 # Ignore possible upload-folders. They are created and destroyed on the fly, when needed.
 /public/system/upload
 /public/system/test
+
+# Ignore paperclip-style in public
+/public/system/paperclip_attachments.yml
