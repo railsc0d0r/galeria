@@ -23,6 +23,7 @@ PicturesNewController = Ember.Controller.extend(
         self.set('file','')
         self.set('name','')
         self.set('comment','')
+        self.controllerFor('application').send('showSuccessfulCreatedPicture')
         self._close()
         ,() ->
            console.log('Picture could not be saved.')
@@ -33,7 +34,6 @@ PicturesNewController = Ember.Controller.extend(
   _close: () ->
             $.modal.close()
             this.transitionToRoute('pictures')
-            this.controllerFor('application').send('showSuccessfulCreatedPicture')
 )
 
 `export default PicturesNewController`
