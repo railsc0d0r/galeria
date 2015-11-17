@@ -1,4 +1,6 @@
-= link-to 'pictures.new' | ADD
+#context_menu
+  = link-to 'pictures.new'
+    img src="#{rails_asset_url 'add_icon.svg'}" alt='ADD' class="app_icon"
 ul
   each model as |picture|
     li

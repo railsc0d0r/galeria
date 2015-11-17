@@ -40,6 +40,10 @@
   font-size: 5vh;
   margin-top: 42vh;
 }
+#context_menu{
+  display: block;
+  text-align: right;
+}
 #logo {
   display: inline-block;
   position: relative;
@@ -96,4 +100,8 @@
 .picture_content {
   padding-left: 120px;
   heigth: 100%;
+}
+img.app_icon {
+  width: 4vw;
+  height: 4vw;
 }
