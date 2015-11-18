@@ -11,6 +11,17 @@ MessagesController = Ember.Controller.extend(
     successfulCreatedPicture: () ->
       this._showPopUp("Picture successfully uploaded.")
     
+    successfulPublishedPicture: (isPublic) ->
+      if isPublic
+        text = 'published'
+      else
+        text = 'unpublished'
+        
+      this._showPopUp("Picture successfully " + text + ".")
+    
+    showErrorMsg: (error) ->
+      this._showPopUp("Error: " + error.join)
+    
   _showPopUp: (text) ->
     div = "<div id='messagePopUp'>" + text + "</div>"
     $('body').prepend(div)
