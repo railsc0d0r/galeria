@@ -6,6 +6,13 @@ Angenommen(/^ein hochgeladenes Bild\.$/) do
   @picture.save!
 end
 
+Wenn(/^ich die Checkbox neben dem hochgeladenen Bild aktiviere\.$/) do
+  checkbox = first("input[type='checkbox']")
+  raise "No checkbox on page." if checkbox.nil?
+  
+  steps %{ Wenn ich die Checkbox "#{checkbox[:id]}" aktiviere. }
+end
+
 Dann(/^möchte ich das hochgeladene Bild als Eintrag sehen\.$/) do
   entries = page.all('.picture-list-item')
 
