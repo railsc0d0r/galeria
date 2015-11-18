@@ -19,8 +19,9 @@ MessagesController = Ember.Controller.extend(
         
       this._showPopUp("Picture successfully " + text + ".")
     
-    showErrorMsg: (error) ->
-      this._showPopUp("Error: " + error.join)
+    showErrorMsg: (msg) ->
+      console.log(msg)  
+      this._showPopUp("Error: " + msg)
     
   _showPopUp: (text) ->
     div = "<div id='messagePopUp'>" + text + "</div>"

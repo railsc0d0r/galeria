@@ -12,10 +12,11 @@ PicturesController = Ember.ArrayController.extend(
         picture.save().then(() ->
           self.controllerFor('messages').send('successfulPublishedPicture', isPublic)
         ).catch((reason) ->
-          self.controllerFor('messages').send('showErrorMsg', reason.error)
+          console.log(reason)
+          self.controllerFor('messages').send('showErrorMsg', reason.message)
         )
       ).catch((reason) ->
-          self.controllerFor('messages').send('showErrorMsg', reason.error)
+          self.controllerFor('messages').send('showErrorMsg', reason.message)
       )
         
       return
