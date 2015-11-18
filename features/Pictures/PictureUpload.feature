@@ -22,10 +22,8 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Und möchte ich die Bilder-Liste sehen.
     Und möchte ich das hochgeladene Bild als Eintrag sehen.
 
-  @wip
   Szenario: Ein Bild öffentlich stellen
     Angenommen ein hochgeladenes Bild.
     Und ich navigiere zur Bilder-Liste.
-    Dann screenshot.
     Wenn ich die Checkbox neben dem hochgeladenen Bild aktiviere.
-    Dann möchte ich "Picture successfully published" sehen.
+    Dann möchte ich "Picture successfully published." sehen.

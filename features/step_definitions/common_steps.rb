@@ -150,8 +150,8 @@ Wenn(/^ich die Datei "(.*?)" als "(.*?)" auswähle\.$/) do |file_name, field_nam
   attach_file(field_name, @test_path + file_name)
 end
 
-Wenn(/^ich die Checkbox "(.*?)" aktiviere\.$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Wenn(/^ich die Checkbox "(.*?)" aktiviere\.$/) do |locator|
+  check(locator)
 end
 
 Wenn(/^ich "(.*?)" auf der Startseite auswähle\.$/) do |link_name|
