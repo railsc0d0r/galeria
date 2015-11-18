@@ -150,7 +150,12 @@ Wenn(/^ich die Datei "(.*?)" als "(.*?)" auswähle\.$/) do |file_name, field_nam
   attach_file(field_name, @test_path + file_name)
 end
 
+Wenn(/^ich die Checkbox "(.*?)" aktiviere\.$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
 Wenn(/^ich "(.*?)" auf der Startseite auswähle\.$/) do |link_name|
+  raise "Not on root." unless current_page == path_for('Startseite')
   steps %{ Wenn ich den "#{link_name}"-Link klicke }
 end
 
