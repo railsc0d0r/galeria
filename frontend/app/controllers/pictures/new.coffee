@@ -23,7 +23,7 @@ PicturesNewController = Ember.Controller.extend(
         self.set('file','')
         self.set('name','')
         self.set('comment','')
-        self.controllerFor('application').send('showSuccessfulCreatedPicture')
+        self.controllerFor('messages').send('successfulCreatedPicture')
         self._close()
         ,() ->
            console.log('Picture could not be saved.')
