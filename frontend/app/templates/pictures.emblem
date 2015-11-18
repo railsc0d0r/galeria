@@ -4,11 +4,15 @@
 ul
   each model as |picture|
     li
-      = picture-list-item pictureId=picture.id isPublic=picture.public thumbnail=picture.url_thumbnail large=picture.url_large
+      = picture-list-item pictureId=picture.id isPublic=picture.public thumbnail=picture.url_thumbnail large=picture.url_large setPublicAction="setPublic"
         p
           | Name: #{picture.name}
         p
           | Comment: #{picture.comment}
+        p
+          label for='public'
+            | Public:
+          = input id=picture.id type="checkbox" checked=picture.public  
 	
   else
     | No images yet...
