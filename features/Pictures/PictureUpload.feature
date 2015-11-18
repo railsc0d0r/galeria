@@ -27,3 +27,9 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Und ich navigiere zur Bilder-Liste.
     Wenn ich die Checkbox neben dem hochgeladenen Bild aktiviere.
     Dann möchte ich "Picture successfully published." sehen.
+
+  Szenario: Ein Bild privat setzen
+    Angenommen ein hochgeladenes und veröffentlichtes Bild.
+    Und ich navigiere zur Bilder-Liste.
+    Wenn ich die Checkbox neben dem hochgeladenen Bild deaktiviere.
+    Dann möchte ich "Picture successfully unpublished." sehen.
