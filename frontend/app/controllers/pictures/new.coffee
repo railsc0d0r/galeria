@@ -15,23 +15,27 @@ PicturesNewController = Ember.Controller.extend(
       name = this.get('name')
       comment = this.get('comment')
 
-      picture = this.store.createRecord('picture',{ name: name, comment: comment, attachement: attachement })
-      self = this
-      picture.save().then(() ->  
-        console.log('Picture created.')
-      	self.transitionToRoute('pictures')
-        self.set('file','')
-        self.set('name','')
-        self.set('comment','')
-        self.controllerFor('messages').send('successfulCreatedPicture')
-        self._close()
-        ,() ->
-           console.log('Picture could not be saved.')
-      )
+      if attachement && name
+        picture = this.store.createRecord('picture',{ name: name, comment: comment, attachement: attachement })
+        self = this
+        picture.save().then(() ->
+          console.log('Picture created.')
+          self.transitionToRoute('pictures')
+          self.controllerFor('messages').send('successfulCreatedPicture')
+          self._close()
+          ).catch((error) ->
+             console.log('Picture could not be saved: ' + error.message)
+          )
+      else
+        this.controllerFor('messages').send('showErrorMsg', 'Please choose an image and a name.')
 
     close: () ->
         this._close()
   _close: () ->
+            this.set('file','')
+            this.set('name','')
+            this.set('comment','')
+            this.set('attachement',null)
             $.modal.close()
             this.transitionToRoute('pictures')
 )
