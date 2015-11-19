@@ -20,7 +20,6 @@ MessagesController = Ember.Controller.extend(
       this._showPopUp("Picture successfully " + text + ".")
     
     showErrorMsg: (msg) ->
-      console.log(msg)  
       this._showPopUp("Error: " + msg)
     
   _showPopUp: (text) ->

@@ -5,21 +5,17 @@ PicturesController = Ember.ArrayController.extend(
 
   actions:
     setPublic: (id,isPublic) ->
-      console.log('Getting picture for id ' + id + ' and setting public to ' + isPublic)
       self = this
       this.store.find('picture',id).then((picture) ->
         picture.set('public', isPublic)
         picture.save().then(() ->
           self.controllerFor('messages').send('successfulPublishedPicture', isPublic)
-        ).catch((reason) ->
-          console.log(reason)
-          self.controllerFor('messages').send('showErrorMsg', reason.message)
-        )
-      ).catch((reason) ->
-          self.controllerFor('messages').send('showErrorMsg', reason.message)
-      )
+        ).catch((error) -> self._failure(error))
+      ).catch((error) ->self._failure(error))
         
       return
+  _failure: (error) ->
+          this.controllerFor('messages').send('showErrorMsg', error.message)
 )
 
 `export default PicturesController`
