@@ -3,13 +3,13 @@
 MessagesController = Ember.Controller.extend(
   actions:
     successfulAuthenticated: () ->
-      this._showPopUp("Successfully authenticated.")
+      this._showMessage("Successfully authenticated.")
     
     loggingOut: () ->
-      this._showPopUp("Logging out.")
+      this._showMessage("Logging out.")
     
     successfulCreatedPicture: () ->
-      this._showPopUp("Picture successfully uploaded.")
+      this._showMessage("Picture successfully uploaded.")
     
     successfulPublishedPicture: (isPublic) ->
       if isPublic
@@ -17,14 +17,21 @@ MessagesController = Ember.Controller.extend(
       else
         text = 'unpublished'
         
-      this._showPopUp("Picture successfully " + text + ".")
+      this._showMessage("Picture successfully " + text + ".")
     
     showErrorMsg: (msg) ->
-      this._showPopUp("Error: " + msg)
+      this._showError("Error: " + msg)
     
-  _showPopUp: (text) ->
-    div = "<div id='messagePopUp'>" + text + "</div>"
-    $('body').prepend(div)
+  _showMessage: (message) ->
+    div = "<div id='messagePopUp' class='message'>" + message + "</div>"
+    this._showPopUp(div)
+    
+  _showError: (error) ->
+    div = "<div id='messagePopUp' class='error'>" + error + "</div>"
+    this._showPopUp(div)
+    
+  _showPopUp: (content) ->
+    $('body').prepend(content)
     $('#messagePopUp').fadeOut(2000, () -> $('#messagePopUp').remove())
 )
 

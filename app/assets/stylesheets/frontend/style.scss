@@ -75,11 +75,16 @@
 #messagePopUp {
   position: fixed;
   text-align: center;
-  background: #ddd;
   opacity: 1.0;
   top: 0;
   width: 100vw;
   z-index: 99;
+}
+.message {
+  background: #31cb03;
+}
+.error {
+  background: #f31212;
 }
 .picture-list-item {
   border: 1px solid #999;
