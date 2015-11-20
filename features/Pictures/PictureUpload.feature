@@ -22,6 +22,13 @@ Funktionalität: Bilder hochladen und öffentlich stellen
     Und möchte ich die Bilder-Liste sehen.
     Und möchte ich das hochgeladene Bild als Eintrag sehen.
 
+  Szenario: Ein Bild hochladen ohne Bild - Fehlermeldung
+    Wenn ich das Hauptmenü öffne.
+    Und ich den "PICTURES"-Link klicke.
+    Und ich den "ADD"-Link klicke.
+    Und ich den "UPLOAD"-Button klicke.
+    Dann möchte ich "Please choose an image and a name." sehen.
+
   Szenario: Ein Bild öffentlich stellen
     Angenommen ein hochgeladenes Bild.
     Und ich navigiere zur Bilder-Liste.
