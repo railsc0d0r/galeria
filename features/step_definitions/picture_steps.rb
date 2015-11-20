@@ -19,8 +19,22 @@ Wenn(/^ich die Checkbox neben dem hochgeladenen Bild deaktiviere\.$/) do
   steps %{ Wenn ich die Checkbox "#{@picture.id}" deaktiviere. }
 end
 
+Wenn(/^ich das hochgeladene Bild zum Löschen auswähle\.$/) do
+  steps %{ Wenn ich den "DELETE"-Link klicke. }
+end
+
+Wenn(/^ich das hochgeladene Bild zum Bearbeiten auswähle\.$/) do
+  steps %{ Wenn ich den "EDIT"-Link klicke. }
+end
+
 Dann(/^möchte ich das hochgeladene Bild als Eintrag sehen\.$/) do
   entries = page.all('.picture-list-item')
 
-  raise "no entries found in picturelist" unless entries.count > 0
+  raise "No entries found in picturelist" unless entries.count > 0
+end
+
+Dann(/^möchte ich das hochgeladene Bild nicht als Eintrag sehen\.$/) do
+  entries = page.all('.picture-list-item')
+
+  raise "Still entries found in picturelist" if entries.count > 0
 end
