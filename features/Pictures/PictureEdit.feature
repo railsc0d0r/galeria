@@ -22,3 +22,5 @@ Funktionalität: Bilder bearbeiten
     Dann möchte ich "Picture successfully updated." sehen.
     Und möchte ich die Bilder-Liste sehen.
     Und möchte ich das hochgeladene Bild als Eintrag sehen.
+    Und möchte ich "Test-Name-neu" sehen.
+    Und möchte ich "Test-Kommentar-neu" sehen.
