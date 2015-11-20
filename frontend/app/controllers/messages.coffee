@@ -11,6 +11,9 @@ MessagesController = Ember.Controller.extend(
     successfulCreatedPicture: () ->
       this._showMessage("Picture successfully uploaded.")
     
+    successfulDeletedPicture: () ->
+      this._showMessage("Picture successfully deleted.")
+    
     successfulPublishedPicture: (isPublic) ->
       if isPublic
         text = 'published'

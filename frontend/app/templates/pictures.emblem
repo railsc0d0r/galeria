@@ -11,6 +11,9 @@ ul
           = input id=picture.id type="checkbox" checked=picture.public  class="without_form"
         p
           | Name: #{picture.name}
+        p style="float:right; padding-right: 2vw;"
+          = link-to 'picture.delete' picture
+            img src="#{rails_asset_url 'delete_icon.svg'}" alt='DELETE' class='app_icon'
         p
           | Comment: #{picture.comment}
 	

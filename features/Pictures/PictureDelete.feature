@@ -10,7 +10,6 @@ Funktionalität: Bilder löschen
     Und eine Anmeldung als Administrator.
     Und eine Datei "test.png" im Testfixtures-Verzeichnis.
 
-  @wip
   Szenario: Ein Bild hochladen
     Angenommen ein hochgeladenes Bild.
     Und ich navigiere zur Bilder-Liste.
