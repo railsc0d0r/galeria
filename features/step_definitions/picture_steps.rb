@@ -6,9 +6,21 @@ Angenommen(/^ein hochgeladenes Bild\.$/) do
   @picture.save!
 end
 
+Angenommen(/^(\d+) hochgeladene Bilder\.$/) do |count|
+  count.to_i.times do
+    steps %{ Angenommen ein hochgeladenes Bild. }
+  end
+end
+
 Angenommen(/^ein hochgeladenes und veröffentlichtes Bild\.$/) do
   steps %{ Angenommen ein hochgeladenes Bild. }
   @picture.update_attribute(:public,true)
+end
+
+Angenommen(/^(\d+) hochgeladene und veröffentlichte Bilder\.$/) do |count|
+  count.to_i.times do
+    steps %{ Angenommen ein hochgeladenes und veröffentlichtes Bild. }
+  end
 end
 
 Wenn(/^ich die Checkbox neben dem hochgeladenen Bild aktiviere\.$/) do
@@ -37,4 +49,12 @@ Dann(/^möchte ich das hochgeladene Bild nicht als Eintrag sehen\.$/) do
   entries = page.all('.picture-list-item')
 
   raise "Still entries found in picturelist" if entries.count > 0
+end
+
+Dann(/^will ich (\d+) Bilder in einer Gallerie angezeigt bekommen\.$/) do |count|
+  gallery = page.find('.gallery')
+
+  within(gallery) do
+    assert_selector('img.picture', count: count)
+  end
 end
