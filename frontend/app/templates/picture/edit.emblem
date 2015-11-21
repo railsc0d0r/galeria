@@ -1,1 +1,18 @@
-= outlet
+#edit_form.modal
+  form.upload_modal submit="updatePicture"
+    label for='name'
+      | Name:
+    = input id='name' placeholder='Enter Name' type='name' value=model.name
+    label for='comment'
+      | Comment:
+    = input id='comment' placeholder='Enter Comment' type='comment' value=model.comment
+    label for='file'
+      | Choose your picture:
+    = file-picker class="new_picture" fileLoaded="fileLoaded" readAs="readAsDataURL" hideFileInput=false selectOnClick=false dropzone=false
+    if file_name
+      | #{file_name}, #{file_size}
+    label for='submit'
+      |
+    input type='submit' value='UPLOAD'
+  a.close-modal click='close'
+  

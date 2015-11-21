@@ -10,8 +10,7 @@ Funktionalität: Bilder bearbeiten
     Und eine Anmeldung als Administrator.
     Und eine Datei "test.png" im Testfixtures-Verzeichnis.
 
-  @wip
-  Szenario: Ein Bild hochladen
+  Szenario: Ein Bild bearbeiten
     Angenommen ein hochgeladenes Bild.
     Und ich navigiere zur Bilder-Liste.
     Wenn ich das hochgeladene Bild zum Bearbeiten auswähle.
@@ -24,3 +23,13 @@ Funktionalität: Bilder bearbeiten
     Und möchte ich das hochgeladene Bild als Eintrag sehen.
     Und möchte ich "Test-Name-neu" sehen.
     Und möchte ich "Test-Kommentar-neu" sehen.
+
+  Szenario: Ein Bild bearbeiten - Name leer
+    Angenommen ein hochgeladenes Bild.
+    Und ich navigiere zur Bilder-Liste.
+    Wenn ich das hochgeladene Bild zum Bearbeiten auswähle.
+    Und ich "" als Name eingebe.
+    Und ich "Test-Kommentar-neu" als Kommentar eingebe.
+    Und ich das Bild "test.png" zum erstellen auswähle.
+    Und ich den "UPLOAD"-Button klicke.
+    Dann möchte ich "Please choose at least a name." sehen.

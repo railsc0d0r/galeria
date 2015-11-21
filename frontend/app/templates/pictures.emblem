@@ -14,6 +14,8 @@ ul
         p style="float:right; padding-right: 2vw;"
           = link-to 'picture.delete' picture
             img src="#{rails_asset_url 'delete_icon.svg'}" alt='DELETE' class='app_icon'
+          = link-to 'picture.edit' picture
+            img src="#{rails_asset_url 'edit_icon.svg'}" alt='EDIT' class='app_icon'
         p
           | Comment: #{picture.comment}
 	
