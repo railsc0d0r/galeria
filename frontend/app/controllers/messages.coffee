@@ -11,6 +11,9 @@ MessagesController = Ember.Controller.extend(
     successfulCreatedPicture: () ->
       this._showMessage("Picture successfully uploaded.")
     
+    successfulUpdatedPicture: () ->
+      this._showMessage("Picture successfully updated.")
+    
     successfulDeletedPicture: () ->
       this._showMessage("Picture successfully deleted.")
     
