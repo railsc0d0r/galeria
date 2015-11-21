@@ -5,8 +5,6 @@ PictureDeleteRoute = Ember.Route.extend(
            this.modelFor('picture')
   afterModel: (picture,transition) ->
                 self = this
-                console.log('Deleting picture:')
-                console.log(picture)
                 picture.deleteRecord()
                 picture.save().then(
                   () ->

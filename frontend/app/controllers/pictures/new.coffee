@@ -8,7 +8,6 @@ PicturesNewController = Ember.Controller.extend(
       this.set('file_size', Math.round(file.size / 1024) + "Kb")
       this.set('attachement', file)
       $.modal.resize()
-      console.log('File loaded.')
 
     createPicture: () ->
       attachement = this.get('attachement')
