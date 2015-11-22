@@ -3,7 +3,8 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
   model: function(){
-    return this.store.find('picture');
+    var pictures = this.store.findAll('picture');
+    return pictures;
   },
 
   init: function() {
@@ -12,6 +13,7 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
     this.get('session').on('authenticationSucceeded', function() {
       _this._populateCurrentUser();
       _this._cleanUpAndTransition();
+      _this.refresh();
     });
 
     this._super.apply(this, arguments);
