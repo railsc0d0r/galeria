@@ -16,7 +16,7 @@ Paperclip::Attachment.default_options[:url] = "#{RailsUpload.base_url}/:class/:a
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w[ .gif .png .jpg .svg .json frontend.css modernizr.js jquery.modal.min.js jquery.modal.css img/classic-loader.gif img/classic-map.png css/galleria.classic.css js/galleria-1.4.2.js js/ galleria.classic.js ]
+Rails.application.config.assets.precompile += %w[ .gif .png .jpg .svg .json frontend.css modernizr.js jquery.modal.min.js jquery.modal.css classic-loader.gif classic-map.png galleria.classic.css galleria-1.4.2.js galleria.classic.js ]
 
 Rails.application.config.assets.precompile << Proc.new do |path|
   path =~ /\.(css|js|png|jpg|mp3|ogg|wav|otf|eot|ttf|woff|fnt|svg|appcache|json)\z/ ? true : false
