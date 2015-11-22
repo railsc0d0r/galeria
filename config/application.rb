@@ -64,5 +64,10 @@ module Galeria
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Adds some assets-paths
+    config.assets.paths << Rails.root.join("vendor", "assets", "galleria","js")
+    config.assets.paths << Rails.root.join("vendor", "assets", "galleria","css")
+    config.assets.paths << Rails.root.join("vendor", "assets", "galleria","img")
   end
 end
