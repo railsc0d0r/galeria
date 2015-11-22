@@ -6,7 +6,11 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    @pictures = Picture.all
+    if current_user
+      @pictures = Picture.all
+    else
+      @pictures = Picture.where(public:true)
+    end
 
     respond_to do |format|
       format.html { render html: @pictures }
