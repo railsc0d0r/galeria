@@ -43,6 +43,11 @@ class User < ActiveRecord::Base
     @login || self.username || self.email
   end
 
+  # convinience finder
+  def self.find_by_login login
+    where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
+  end
+  
   # convinience-methods to make code better readable
   def is_activated?
     self.activated
