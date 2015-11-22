@@ -16,7 +16,7 @@ module Paperclip
       @whiny = options[:whiny].nil? ? true : options[:whiny]
       @format = options[:format]
       @watermark_path = options[:watermark_path]
-      @position = options[:position].nil? ? "SouthEast" : options[:position]
+      @position = options[:position].nil? ? "East" : options[:position]
       @watermark_offset = options[:watermark_offset]
       @overlay = options[:overlay].nil? ? true : false
       @current_format = File.extname(@file.path)
