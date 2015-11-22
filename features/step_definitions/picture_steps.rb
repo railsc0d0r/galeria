@@ -52,9 +52,9 @@ Dann(/^möchte ich das hochgeladene Bild nicht als Eintrag sehen\.$/) do
 end
 
 Dann(/^will ich (\d+) Bilder in einer Gallerie angezeigt bekommen\.$/) do |count|
-  gallery = page.find('.gallery')
+  gallery_total = page.find('.galleria-total')
 
-  within(gallery) do
-    assert_selector('img.picture', count: count)
-  end
+  total = gallery_total.text.to_i
+  
+  raise "Expected #{count} pictures, but found #{total}" unless count.to_i == total
 end
