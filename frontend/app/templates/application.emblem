@@ -3,5 +3,5 @@
   = partial "menu"
   = partial "imprint"
   = partial "data_protection_hint"
-#main.galleria
+#main
   = outlet
