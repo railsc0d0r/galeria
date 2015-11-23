@@ -3,6 +3,7 @@
 PictureGalleryComponent = Ember.Component.extend(
   didInsertElement: () ->
         Galleria.loadTheme(window.assets.galleria['galleria.classic.js'])
+        Galleria.configure(imagePan: true)
         Galleria.run('.galleria')
 )
 
