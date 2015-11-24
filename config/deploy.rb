@@ -60,7 +60,7 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, "paperclip:refresh:missing_styles"
+          execute "bash -l -c 'cd #{release_path}; pwd; rm public/system/paperclip_attachments.yml; bundle exec rake paperclip:refresh:missing_styles RAILS_ENV=#{fetch(:rails_env)}'"
         end
       end
     end
