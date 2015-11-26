@@ -195,7 +195,7 @@ end
 
 Dann(/^debug(?:ger|)$/) do
   ## Use `page' method to inspect the current state.
-  byebug
+  binding.pry
 end
 
 Dann(/^screenshot\.$/) do
